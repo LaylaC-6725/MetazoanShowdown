@@ -20,7 +20,7 @@ module.exports.registerUser = async function (name, password) {
       let result = await pool.query(sql1, [name]);
       
       if (result.rows.length == 1) {
-          return { status: 420, result: { msg: "Username already exists" } };
+          return { status: 200, result: { msg: "Username already exists" } };
       }else{
           let sql2 = `Insert into player(player_name, player_password) values($1,$2)`;
           await pool.query(sql2, [name,password]);
