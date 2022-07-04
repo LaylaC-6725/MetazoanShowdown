@@ -17,8 +17,10 @@ module.exports.getPlayerCards = async function (pId) {
 module.exports.registerUser = async function (name, password) {
   try {
       let sql1 = `Select player_name from player where player_name = $1`;
+      alert("1");
+     
       let result = await pool.query(sql1, [name]);
-      
+      alert(result.rows.length);
       if (result.rows.length == 1) {
           return { status: 200, result: { msg: "Username already exists" } };
       }else{
