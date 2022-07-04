@@ -26,7 +26,6 @@ async function registerPlayer() {
             let res = await register(name,password);
  
             alert(res.msg);  
-            alert("4"); 
             window.location = "index.html";  
         }
 
