@@ -76,6 +76,7 @@ async function register(name, password) {
         });
         var result = await response.json();
         // We are not checking for errors (considering the GUI is only allowing correct choices)
+        return {logged: response.status==200 , result: result };
         return result;
     } catch (err) {
         // Treat 500 errors here
