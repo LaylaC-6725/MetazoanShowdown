@@ -3,7 +3,7 @@ async function loginPlayer() {
         let name = document.getElementById("name").value;
         let password = document.getElementById("password").value;
         
-        var encryptPass = CryptoJS.SHA3(password);
+        var encryptPass = CryptoJS.AES.encrypt(password,"I love javascript");
         
         let result = await login(name, encryptPass);
         if (result.logged) {
