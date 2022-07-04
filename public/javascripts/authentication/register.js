@@ -19,11 +19,11 @@ async function registerPlayer() {
             alert("The password is not secure. It must be longer than 8 characters, include a number, an uppercase letter and a lowercase letter"); 
             
         }else{
-
+            alert("1");  
             var encryptPass = CryptoJS.AES.encrypt(password,"I love javascript");
-
+            alert("2");  
             let res = await register(name,encryptPass);
-
+            alert("3");  
             alert(res.msg);    
             window.location = "index.html";  
         }
