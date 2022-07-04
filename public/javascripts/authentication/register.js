@@ -20,9 +20,7 @@ async function registerPlayer() {
             
         }else{
 
-            alert("1");
-            let encryptPass = CryptoJS.SHA3(password);
-            alert("2");
+            var encryptPass = CryptoJS.AES.encrypt(password,"I love javascript");
 
             let res = await register(name,encryptPass);
 
