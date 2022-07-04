@@ -13,9 +13,9 @@ async function registerPlayer() {
         var regexName = new RegExp("^(?=.{3,})");
         var regexPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
         
-        if (!regex.test(name)){
+        if (!regexName.test(name)){
              alert("The name is invalid. It must be longer than 3 characters");  
-        }else if (!regex.test(password)){
+        }else if (!regexPass.test(password)){
             alert("The password is not secure. It must be longer than 8 characters, include a number, an uppercase letter and a lowercase letter");   
         }else{
             let res = await register(name,password);
