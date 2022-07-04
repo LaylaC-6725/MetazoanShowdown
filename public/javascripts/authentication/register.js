@@ -19,7 +19,8 @@ async function registerPlayer() {
             alert("The user already exist. Choose another name");  
         } else {
            */
-        
+           
+           // Verificar tipo de Nome e Password
            let regexName = new RegExp("^(?=.{3,})");
            let regexPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
             
@@ -29,7 +30,9 @@ async function registerPlayer() {
                 alert("The password is not secure. It must be longer than 8 characters, include a number, an uppercase letter and a lowercase letter");   
             }else{
                 
-            let res = await register(name,password);
+            let encryptPass = CryptoJS.SHA3(password);
+            let res = await register(name,encryptPass);
+                
             alert(res.msg);    
             window.location = "index.html";  
         
