@@ -7,7 +7,6 @@ async function registerPlayer() {
         let name = document.getElementById("name").value;
         let password = document.getElementById("password").value;
         
-       // Verificar tipo de Nome e Password
        let regexName = new RegExp("^(?=.{3,})");
        let regexPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
 
