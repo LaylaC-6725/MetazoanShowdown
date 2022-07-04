@@ -13,11 +13,13 @@ async function registerPlayer() {
         window.location = "index.html"; 
         */
         
+        /*
         let result = await loginName(name);  // Criei em models uma novo models de nome LoginName 
         if (result.logged) {
             alert("The user already exist. Choose another name");  
         } else {
-           
+           */
+        
            let regexName = new RegExp("^(?=.{3,})");
            let regexPass = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})");
             
@@ -30,7 +32,8 @@ async function registerPlayer() {
             let res = await register(name,password);
             alert(res.msg);    
             window.location = "index.html";  
-        }
+        
+            /*} */
             
         }
         
