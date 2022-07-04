@@ -93,7 +93,7 @@ async function login(name, password) {
             body: JSON.stringify({ name: name, password: password}) 
         });
         var  result= await response.json();
-        return {logged: response.status==200 , result: result };
+        return result;
     } catch (err) {
         // Treat 500 errors here
         console.log(err);
