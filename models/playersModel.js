@@ -16,6 +16,7 @@ module.exports.getPlayerCards = async function (pId) {
 
 module.exports.registerUser = async function (name, password) {
   try {
+      /*
       let sql1 = `Select player_name from player where player_name = $1`;
       alert("1");
      
@@ -24,10 +25,11 @@ module.exports.registerUser = async function (name, password) {
       if (result.rows.length == 1) {
           return { status: 200, result: { msg: "Username already exists" } };
       }else{
-          let sql2 = `Insert into player(player_name, player_password) values($1,$2)`;
-          await pool.query(sql2, [name,password]);
+      */
+          let sql = `Insert into player(player_name, player_password) values($1,$2)`;
+          await pool.query(sql, [name,password]);
           return { status: 200, result: { msg: "New player registered" } };
-      }
+      //}
   } catch (err) {
         console.log(err);
         return { status: 500, result: err };        
